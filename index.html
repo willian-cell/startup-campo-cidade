@@ -75,43 +75,45 @@
 <!--<body class="font-sans scroll-smooth bg-[url('/img/baner1.png')] bg-cover bg-no-repeat bg-center">
 -->
     <!-- Cabeçalho -->
-    <header class="fixed top-0 left-0 right-0 bg-white shadow-lg z-50 transition-all duration-300">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="index.html" class="flex items-center">
-                <img src="img/logo2.png" alt="Logo Campo Cidade" class="h-16">
-                <span class="ml-3 text-2xl font-bold text-green-600 hidden md:block">Campo Cidade</span>
-            </a>
-            
-            <nav class="hidden md:flex space-x-8">
-                <a href="#valores" class="text-gray-700 hover:text-green-600 font-medium transition-colors duration-300">Valores</a>
-                <a href="#sobre" class="text-gray-700 hover:text-green-600 font-medium transition-colors duration-300">Sobre</a>
-                <a href="#ecommerce" class="text-gray-700 hover:text-green-600 font-medium transition-colors duration-300">E-Commerce</a>
-                <a href="#modulos" class="text-gray-700 hover:text-green-600 font-medium transition-colors duration-300">Módulos</a>
-                <a href="#contato" class="text-gray-700 hover:text-green-600 font-medium transition-colors duration-300">Contato</a>
-            </nav>
-            
-            <div class="flex items-center space-x-4">
-                <a  href="https://31f2c2e29ebf.ngrok-free.app/login" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full font-medium transition-all duration-300 btn-grow hidden md:block">
-                    <i class="fas fa-user mr-2"></i>Login
-                </a>
-                <button id="mobile-menu-button" class="md:hidden text-gray-700 text-2xl focus:outline-none">
-                    <i class="fas fa-bars"></i>
-                </button>
-
-            </div>
-        </div>
-    </header>
-
-    <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg px-4 py-4 space-y-4">
-        <a href="#valores" class="block text-gray-700 hover:text-green-600 font-medium">Valores</a>
-        <a href="#sobre" class="block text-gray-700 hover:text-green-600 font-medium">Sobre</a>
-        <a href="#ecommerce" class="block text-gray-700 hover:text-green-600 font-medium">E-Commerce</a>
-        <a href="#modulos" class="block text-gray-700 hover:text-green-600 font-medium">Módulos</a>
-        <a href="#contato" class="block text-gray-700 hover:text-green-600 font-medium">Contato</a>
-        <a href="https://31f2c2e29ebf.ngrok-free.app/login" class="block bg-green-600 text-white text-center px-4 py-2 rounded-full font-medium hover:bg-green-700 transition-all">
-            <i class="fas fa-user mr-2"></i> Login
-        </a>
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white border-b-4 border-green-500 shadow-md">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
+    <!-- Logo e nome -->
+    <div class="flex items-center gap-3">
+      <img src="img/logo-campo.png" alt="Logo" class="h-10">
+      <span class="text-xl font-bold text-green-700">Campo Cidade</span>
     </div>
+
+    <!-- Botão mobile -->
+    <button id="mobile-menu-button" class="md:hidden text-green-700 text-2xl focus:outline-none">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Menu desktop -->
+    <nav class="hidden md:flex gap-6 items-center text-gray-700 font-medium">
+      <a href="#valores" class="hover:text-green-600">Valores</a>
+      <a href="#sobre" class="hover:text-green-600">Sobre</a>
+      <a href="#ecommerce" class="hover:text-green-600">E-Commerce</a>
+      <a href="#modulos" class="hover:text-green-600">Módulos</a>
+      <a href="#contato" class="hover:text-green-600">Contato</a>
+      <a href="https://31f2c2e29ebf.ngrok-free.app/login" class="bg-green-600 text-white px-4 py-2 rounded-full hover:bg-green-700 transition-all">
+        <i class="fas fa-user mr-1"></i> Login
+      </a>
+    </nav>
+  </div>
+
+  <!-- Menu mobile -->
+  <div id="mobile-menu" class="md:hidden hidden bg-white px-6 py-4 border-t border-gray-200 space-y-4">
+    <a href="#valores" class="block text-gray-700 hover:text-green-600 font-medium">Valores</a>
+    <a href="#sobre" class="block text-gray-700 hover:text-green-600 font-medium">Sobre</a>
+    <a href="#ecommerce" class="block text-gray-700 hover:text-green-600 font-medium">E-Commerce</a>
+    <a href="#modulos" class="block text-gray-700 hover:text-green-600 font-medium">Módulos</a>
+    <a href="#contato" class="block text-gray-700 hover:text-green-600 font-medium">Contato</a>
+    <a href="https://31f2c2e29ebf.ngrok-free.app/login" class="block bg-green-600 text-white text-center px-4 py-2 rounded-full font-medium hover:bg-green-700 transition-all">
+      <i class="fas fa-user mr-2"></i> Login
+    </a>
+  </div>
+</header>
+
 
 
     <!-- Seção Hero -->
@@ -815,5 +817,24 @@
             testimonials[current].classList.add('opacity-100');
         }, 5000);
     </script>
+
+
+<script>
+  const btn = document.getElementById("mobile-menu-button");
+  const menu = document.getElementById("mobile-menu");
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+
+  window.addEventListener("click", function (e) {
+    if (!menu.contains(e.target) && !btn.contains(e.target)) {
+      menu.classList.add("hidden");
+    }
+  });
+</script>
+
+
+
 </body>
 </html>
