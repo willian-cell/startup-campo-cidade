@@ -102,16 +102,17 @@
   </div>
 
   <!-- Menu mobile -->
-  <div id="mobile-menu" class="md:hidden hidden bg-white px-6 py-4 border-t border-gray-200 space-y-4">
-    <a href="#valores" class="block text-gray-700 hover:text-green-600 font-medium">Valores</a>
-    <a href="#sobre" class="block text-gray-700 hover:text-green-600 font-medium">Sobre</a>
-    <a href="#ecommerce" class="block text-gray-700 hover:text-green-600 font-medium">E-Commerce</a>
-    <a href="#modulos" class="block text-gray-700 hover:text-green-600 font-medium">Módulos</a>
-    <a href="#contato" class="block text-gray-700 hover:text-green-600 font-medium">Contato</a>
+  <div id="mobile-menu" class="md:hidden fixed top-16 right-0 w-3/4 h-full bg-white shadow-lg p-6 transform translate-x-full transition-transform duration-300 ease-in-out z-40">
+    <a href="#valores" class="block text-gray-700 hover:text-green-600 font-medium mb-4">Valores</a>
+    <a href="#sobre" class="block text-gray-700 hover:text-green-600 font-medium mb-4">Sobre</a>
+    <a href="#ecommerce" class="block text-gray-700 hover:text-green-600 font-medium mb-4">E-Commerce</a>
+    <a href="#modulos" class="block text-gray-700 hover:text-green-600 font-medium mb-4">Módulos</a>
+    <a href="#contato" class="block text-gray-700 hover:text-green-600 font-medium mb-4">Contato</a>
     <a href="https://31f2c2e29ebf.ngrok-free.app/login" class="block bg-green-600 text-white text-center px-4 py-2 rounded-full font-medium hover:bg-green-700 transition-all">
-      <i class="fas fa-user mr-2"></i> Login
+        <i class="fas fa-user mr-2"></i> Login
     </a>
-  </div>
+    </div>
+
 </header>
 
 
@@ -823,13 +824,24 @@
   const btn = document.getElementById("mobile-menu-button");
   const menu = document.getElementById("mobile-menu");
 
+  let menuAberto = false;
+
   btn.addEventListener("click", () => {
-    menu.classList.toggle("hidden");
+    menu.classList.toggle("translate-x-full");
+    menu.classList.toggle("translate-x-0");
+    menuAberto = !menuAberto;
   });
 
+  // Fecha se clicar fora
   window.addEventListener("click", function (e) {
-    if (!menu.contains(e.target) && !btn.contains(e.target)) {
-      menu.classList.add("hidden");
+    if (
+      menuAberto &&
+      !menu.contains(e.target) &&
+      !btn.contains(e.target)
+    ) {
+      menu.classList.add("translate-x-full");
+      menu.classList.remove("translate-x-0");
+      menuAberto = false;
     }
   });
 </script>
