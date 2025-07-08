@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Campo Cidade - Conectando Agricultores e Consumidores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(40, 167, 69, 0.8) 0%, rgba(0, 100, 0, 0.8) 100%);
+        }
+        
+        .card-hover-effect {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover-effect:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .btn-grow {
+            transition: all 0.3s ease;
+        }
+        
+        .btn-grow:hover {
+            transform: scale(1.05);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(90deg, #28a745, #0d6e1f);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="font-sans  bg-emerald-300 scroll-smooth">
+<!--<body class="font-sans scroll-smooth bg-[url('/img/baner1.png')] bg-cover bg-no-repeat bg-center">
+-->
+    <!-- Cabeçalho -->
+    <header class="fixed top-0 left-0 right-0 bg-white shadow-lg z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <img src="img/logo2.png" alt="Logo Campo Cidade" class="h-16">
+                <span class="ml-3 text-2xl font-bold text-green-600 hidden md:block">Campo Cidade</span>
+            </a>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#valores" class="text-gray-700 hover:text-green-600 font-medium transition-colors duration-300">Valores</a>
+                <a href="#sobre" class="text-gray-700 hover:text-green-600 font-medium transition-colors duration-300">Sobre</a>
+                <a href="#ecommerce" class="text-gray-700 hover:text-green-600 font-medium transition-colors duration-300">E-Commerce</a>
+                <a href="#modulos" class="text-gray-700 hover:text-green-600 font-medium transition-colors duration-300">Módulos</a>
+                <a href="#contato" class="text-gray-700 hover:text-green-600 font-medium transition-colors duration-300">Contato</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <a  href="https://31f2c2e29ebf.ngrok-free.app/login" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full font-medium transition-all duration-300 btn-grow hidden md:block">
+                    <i class="fas fa-user mr-2"></i>Login
+                </a>
+                <button class="md:hidden text-gray-700 text-2xl focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Seção Hero -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden bg-fixed bg-center bg-cover"
+        style="background-image: url(img/img_01.jpg);">
+        
+        <!-- Overlay escuro translúcido para contraste de texto -->
+        <div class="absolute inset-0 bg-black/50 z-10"></div>
+
+        <!-- Conteúdo Hero -->
+        <div class="container mx-auto px-4 relative z-20 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                <span class="block">Conectando o</span>
+                <span class="text-green-400">Campo</span> e a <span class="text-green-400">Cidade</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto">
+                Tecnologia e inovação para fortalecer a agricultura familiar e aproximar produtores e consumidores.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#ecommerce" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 btn-grow">
+                    Conheça nossa plataforma
+                </a>
+                <a href="#sobre" class="bg-white hover:bg-gray-100 text-green-600 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 btn-grow">
+                    Sobre nós
+                </a>
+            </div>
+            
+            <div class="mt-16 flex justify-center">
+                <div class="floating">
+                    <a href="#valores" class="text-white text-4xl animate-bounce">
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Seção Valores -->
+    <section id="valores" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nossos <span class="text-gradient">Valores</span></h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Acreditamos em princípios que guiam nosso trabalho e nossa relação com agricultores e consumidores.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card Missão -->
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover-effect">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-bullseye text-green-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4 text-gray-800">Missão</h3>
+                    <p class="text-gray-600 text-center">
+                        Conectar pequenos produtores rurais aos consumidores urbanos através de uma plataforma tecnológica que valoriza a agricultura familiar e o comércio justo.
+                    </p>
+                </div>
+                
+                <!-- Card Visão -->
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover-effect">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-eye text-green-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4 text-gray-800">Visão</h3>
+                    <p class="text-gray-600 text-center">
+                        Ser referência nacional na conexão entre campo e cidade, promovendo desenvolvimento sustentável e segurança alimentar.
+                    </p>
+                </div>
+                
+                <!-- Card Valores -->
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover-effect">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-heart text-green-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4 text-gray-800">Valores</h3>
+                    <p class="text-gray-600 text-center">
+                        Sustentabilidade, transparência, comércio justo, inovação tecnológica e valorização da agricultura familiar.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre Nós -->
+    <section id="sobre" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                    <div class="relative rounded-xl overflow-hidden shadow-2xl">
+                        <img src="img/baner1.png" 
+                             alt="Equipe Campo Cidade" 
+                             class="w-full h-auto rounded-xl">
+                        <div class="absolute -bottom-6 -right-6 bg-green-600 text-white p-6 rounded-xl shadow-lg">
+                            <span class="block text-4xl font-bold">+ de 5</span>
+                            <span class="block">Anos no mercado</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Sobre a <span class="text-gradient">Campo Cidade</span></h2>
+                    
+                    <p class="text-lg text-gray-600 mb-6">
+                        A Campo Cidade nasceu da necessidade de conectar pequenos produtores rurais diretamente aos consumidores urbanos, eliminando intermediários e garantindo preços justos para ambos os lados.
+                    </p>
+                    
+                    <p class="text-lg text-gray-600 mb-6">
+                        Nossa equipe é composta por especialistas em tecnologia, agronomia e comércio, unidos pelo propósito de fortalecer a agricultura familiar e promover o consumo consciente.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-check text-green-600"></i>
+                            </div>
+                            <span class="text-gray-700">Tecnologia inovadora</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-check text-green-600"></i>
+                            </div>
+                            <span class="text-gray-700">Comércio justo</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-check text-green-600"></i>
+                            </div>
+                            <span class="text-gray-700">Sustentabilidade</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#ecommerce" class="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 btn-grow">
+                        Conheça nossa plataforma
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção E-commerce -->
+    <section id="ecommerce" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nossa <span class="text-gradient">Plataforma</span></h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Uma solução completa para conectar produtores e consumidores de forma simples e eficiente.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover-effect">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Marketplace Digital</h3>
+                        <p class="text-gray-600 mb-6">
+                            Nossa plataforma permite que produtores familiares exponham seus produtos diretamente aos consumidores, com ferramentas completas para gestão de vendas e entregas.
+                        </p>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-gray-700">Catálogo de produtos organizado</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-gray-700">Sistema de avaliações e feedback</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-gray-700">Pagamentos seguros online</span>
+                            </li>
+                        </ul>
+                        <a  href="http://192.168.203.98:5000/cadastro" class="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full font-medium transition-all duration-300 btn-grow">
+                            Cadastre-se agora
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover-effect">
+                    <img src="img/feedhortas.jpg" 
+                         alt="Plataforma Campo Cidade" 
+                         class="w-full h-full object-cover">
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-green-600 text-white rounded-xl shadow-lg p-8 card-hover-effect">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-mobile-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4">Aplicativo Móvel</h3>
+                    <p class="text-center opacity-90">
+                        Baixe nosso app e tenha acesso a todos os recursos da plataforma na palma da sua mão.
+                    </p>
+                    <div class="mt-6 flex justify-center">
+                        <a href="https://play.google.com/store/games?hl=pt_BR" target="_blank" rel="noopener noreferrer">
+                            <img src="img/playstore.jpg" alt="Disponível na Play Store" class="h-12 hover:opacity-90 transition duration-300 border-radius-100%">
+                        </a>
+                    </div>
+
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover-effect">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-truck text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4 text-gray-800">Logística Integrada</h3>
+                    <p class="text-gray-600 text-center">
+                        Sistema de entrega otimizado que conecta produtores a consumidores com eficiência e baixo custo.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover-effect">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-chart-line text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4 text-gray-800">Dashboard Analytics</h3>
+                    <p class="text-gray-600 text-center">
+                        Ferramentas de análise para ajudar produtores a entenderem a demanda e planejarem sua produção.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Módulos -->
+    <section id="modulos" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nossos <span class="text-gradient">Módulos</span></h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Soluções especializadas para diferentes necessidades da agricultura familiar.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Módulo 1 -->
+                <div class="group relative rounded-xl overflow-hidden shadow-lg h-96 card-hover-effect">
+                    <img src="img/adminmobile.jpg" 
+                         alt="Monitoramento Agrícola" 
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                        <h3 class="text-2xl font-bold mb-2">Monitoramento Agrícola</h3>
+                        <p class="opacity-90 mb-4">
+                            Tecnologia para acompanhar o desenvolvimento das culturas e otimizar a produção.
+                        </p>
+                        <a href="#" class="inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 btn-grow">
+                            Saiba mais
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Módulo 2 -->
+                <div class="group relative rounded-xl overflow-hidden shadow-lg h-96 card-hover-effect">
+                    <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" 
+                         alt="Gestão Comercial" 
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                        <h3 class="text-2xl font-bold mb-2">Gestão Comercial</h3>
+                        <p class="opacity-90 mb-4">
+                            Ferramentas completas para administrar vendas, estoque e finanças da sua produção.
+                        </p>
+                        <a href="#" class="inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 btn-grow">
+                            Saiba mais
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Módulo 3 -->
+                <div class="group relative rounded-xl overflow-hidden shadow-lg h-96 card-hover-effect">
+                    <img src="img/img_01.jpg" 
+                         alt="Capacitação" 
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                        <h3 class="text-2xl font-bold mb-2">Capacitação</h3>
+                        <p class="opacity-90 mb-4">
+                            Cursos e treinamentos para aprimorar técnicas agrícolas e gestão de negócios rurais.
+                        </p>
+                        <a href="#" class="inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 btn-grow">
+                            Saiba mais
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Depoimentos -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">O que dizem sobre <span class="text-gradient">nós</span></h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Depoimentos de agricultores e consumidores que utilizam nossa plataforma.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Depoimento 1 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover-effect">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Maria Silva" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Maria Silva</h4>
+                            <p class="text-green-600 text-sm">Agricultora familiar</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "Com a Campo Cidade consegui aumentar minhas vendas em 70% e agora tenho contato direto com meus clientes. A plataforma mudou minha vida!"
+                    </p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Depoimento 2 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover-effect">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="João Santos" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">João Santos</h4>
+                            <p class="text-green-600 text-sm">Consumidor</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "Adoro comprar direto dos produtores. Os alimentos são mais frescos, mais baratos e ainda sei de onde vêm. A plataforma é muito fácil de usar."
+                    </p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                
+                <!-- Depoimento 3 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover-effect">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ana Oliveira" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Ana Oliveira</h4>
+                            <p class="text-green-600 text-sm">Agricultora familiar</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "Os cursos de capacitação me ajudaram a melhorar minha produção. Agora consigo planejar melhor e aumentar minha renda. Recomendo muito!"
+                    </p>
+                    <div class="mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Login/Cadastro -->
+    <section id="login" class="py-20 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <!-- Imagem -->
+                    <div class="hidden md:block">
+                        <img src="img/celular.png" 
+                             alt="Acesse sua conta" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    
+                    <!-- Formulário -->
+                    <div class="p-8 md:p-12">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-2">Acesse sua conta</h2>
+                        <p class="text-gray-600 mb-8">Entre para gerenciar sua produção ou fazer compras diretamente dos produtores.</p>
+                        
+                        <form id="loginForm" class="space-y-6">
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                            </div>
+                            
+                            <div>
+                                <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Senha</label>
+                                <input type="password" id="password" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                    <label for="remember-me" class="ml-2 block text-sm text-gray-700">Lembrar de mim</label>
+                                </div>
+                                
+                                <div class="text-sm">
+                                    <a href="#" class="font-medium text-green-600 hover:text-green-500">Esqueceu sua senha?</a>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white py-3 px-4 rounded-lg font-medium transition-all duration-300 btn-grow">
+                                    Entrar
+                                </button>
+                            </div>
+                        </form>
+                        
+                        <div class="mt-6">
+                            <div class="relative">
+                                <div class="absolute inset-0 flex items-center">
+                                    <div class="w-full border-t border-gray-300"></div>
+                                </div>
+                                <div class="relative flex justify-center text-sm">
+                                    <span class="px-2 bg-gray-50 text-gray-500">Ou</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6 grid grid-cols-2 gap-3">
+                                <div>
+                                    <a href="#" class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                        <i class="fab fa-google text-red-500 mr-2 mt-0.5"></i>
+                                        Google
+                                    </a>
+                                </div>
+                                
+                                <div>
+                                    <a href="#" class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                        <i class="fab fa-facebook-f text-blue-600 mr-2 mt-0.5"></i>
+                                        Facebook
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 text-center">
+                            <p class="text-sm text-gray-600">
+                                Não tem uma conta? 
+                                <a href="#" class="font-medium text-green-600 hover:text-green-500">Cadastre-se</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Entre em <span class="text-gradient">contato</span></h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Tem dúvidas ou sugestões? Fale conosco, estamos aqui para ajudar!
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Formulário -->
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover-effect">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Envie sua mensagem</h3>
+                    
+                    <form id="contactForm" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nome</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Assunto</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensagem</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-green-500"></textarea>
+                        </div>
+                        
+                        <div>
+                            <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white py-3 px-4 rounded-lg font-medium transition-all duration-300 btn-grow">
+                                Enviar mensagem
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Informações -->
+                <div>
+                    <div class="bg-white rounded-xl shadow-lg p-8 mb-8 card-hover-effect">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Informações de contato</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-green-100 rounded-full p-3 mr-4">
+                                    <i class="fas fa-map-marker-alt text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-gray-800">Endereço</h4>
+                                    <p class="text-gray-600">Rua dos Agricultores, 123<br>Santo Antônio do Descoberto - GO</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-green-100 rounded-full p-3 mr-4">
+                                    <i class="fas fa-phone-alt text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-gray-800">Telefone</h4>
+                                    <p class="text-gray-600">(61) 98622-1356<br>Segunda a Sexta, 8h às 18h</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-green-100 rounded-full p-3 mr-4">
+                                    <i class="fas fa-envelope text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-gray-800">E-mail</h4>
+                                    <p class="text-gray-600">contato@campocidade.com.br<br>suporte@campocidade.com.br</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-lg p-8 card-hover-effect">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Redes sociais</h3>
+                        
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 hover:bg-green-600 hover:text-white transition-colors duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.instagram.com/agtechcampocidade/" class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 hover:bg-green-600 hover:text-white transition-colors duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 hover:bg-green-600 hover:text-white transition-colors duration-300">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 hover:bg-green-600 hover:text-white transition-colors duration-300">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <!-- Logo e sobre -->
+                <div>
+                    <a href="index.html" class="flex items-center mb-1">
+                        <img src="img/logo1.png" alt="Logo Campo Cidade" class="h-28 mr-3">
+                    </a>
+                    <p class="text-gray-400">
+                        Conectando o campo e a cidade através da tecnologia, promovendo a agricultura familiar e o consumo consciente.
+                    </p>
+                </div>
+                
+                <!-- Links rápidos -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Links rápidos</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors duration-300">Início</a></li>
+                        <li><a href="#sobre" class="text-gray-400 hover:text-white transition-colors duration-300">Sobre nós</a></li>
+                        <li><a href="#ecommerce" class="text-gray-400 hover:text-white transition-colors duration-300">Plataforma</a></li>
+                        <li><a href="#modulos" class="text-gray-400 hover:text-white transition-colors duration-300">Módulos</a></li>
+                        <li><a href="#contato" class="text-gray-400 hover:text-white transition-colors duration-300">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Módulos -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Módulos</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Monitoramento Agrícola</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Gestão Comercial</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Capacitação</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Marketplace</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Logística</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">
+                        Assine nossa newsletter para receber novidades e dicas sobre agricultura familiar.
+                    </p>
+                    <form class="flex">
+                        <input type="email" placeholder="Seu e-mail" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-800 w-full">
+                        <button type="submit" class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-r-lg transition-colors duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 mb-4 md:mb-0">
+                        &copy; 2023 Campo Cidade. Todos os direitos reservados.
+                    </p>
+                    
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Termos de uso</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Política de privacidade</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Efeito de rolagem suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Efeito de header ao rolar
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('shadow-lg');
+                header.classList.add('py-2');
+            } else {
+                header.classList.remove('shadow-lg');
+                header.classList.remove('py-2');
+            }
+        });
+        
+        // Validação do formulário de contato
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulação de envio
+            alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+            this.reset();
+        });
+        
+        // Validação do formulário de login
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulação de login
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            if (email && password) {
+                alert('Login realizado com sucesso! Redirecionando...');
+                // Aqui você pode adicionar o redirecionamento real
+            } else {
+                alert('Por favor, preencha todos os campos.');
+            }
+        });
+        
+        // Carrossel automático de depoimentos (simulação)
+        setInterval(() => {
+            const testimonials = document.querySelectorAll('[data-testimonial]');
+            let current = 0;
+            
+            testimonials.forEach((testimonial, index) => {
+                if (testimonial.classList.contains('opacity-100')) {
+                    current = index;
+                    testimonial.classList.remove('opacity-100');
+                    testimonial.classList.add('opacity-0');
+                }
+            });
+            
+            current = (current + 1) % testimonials.length;
+            testimonials[current].classList.remove('opacity-0');
+            testimonials[current].classList.add('opacity-100');
+        }, 5000);
+    </script>
+</body>
+</html>
