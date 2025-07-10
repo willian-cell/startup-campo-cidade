@@ -83,19 +83,19 @@
 
             </div>
         </div>
+
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg px-4 py-4 space-y-4 max-h-[80vh] overflow-auto">
+            <a href="#valores" class="block text-gray-700 hover:text-green-600 font-medium">Valores</a>
+            <a href="#sobre" class="block text-gray-700 hover:text-green-600 font-medium">Sobre</a>
+            <a href="#ecommerce" class="block text-gray-700 hover:text-green-600 font-medium">E-Commerce</a>
+            <a href="#modulos" class="block text-gray-700 hover:text-green-600 font-medium">Módulos</a>
+            <a href="#contato" class="block text-gray-700 hover:text-green-600 font-medium">Contato</a>
+            <a href="https://31f2c2e29ebf.ngrok-free.app/login" class="block bg-green-600 text-white text-center px-4 py-2 rounded-full font-medium hover:bg-green-700 transition-all">
+                <i class="fas fa-user mr-2"></i> Login
+            </a>
+        </div>
+
     </header>
-
-    <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg px-4 py-4 space-y-4">
-        <a href="#valores" class="block text-gray-700 hover:text-green-600 font-medium">Valores</a>
-        <a href="#sobre" class="block text-gray-700 hover:text-green-600 font-medium">Sobre</a>
-        <a href="#ecommerce" class="block text-gray-700 hover:text-green-600 font-medium">E-Commerce</a>
-        <a href="#modulos" class="block text-gray-700 hover:text-green-600 font-medium">Módulos</a>
-        <a href="#contato" class="block text-gray-700 hover:text-green-600 font-medium">Contato</a>
-        <a href="https://31f2c2e29ebf.ngrok-free.app/login" class="block bg-green-600 text-white text-center px-4 py-2 rounded-full font-medium hover:bg-green-700 transition-all">
-            <i class="fas fa-user mr-2"></i> Login
-        </a>
-    </div>
-
 
     <!-- Seção Hero -->
     <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden bg-fixed bg-center bg-cover"
@@ -767,20 +767,23 @@
     </script>
 
     <script>
-        const menuBtn = document.getElementById("mobile-menu-button");
-        const menu = document.getElementById("mobile-menu");
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuBtn = document.getElementById("mobile-menu-button");
+            const menu = document.getElementById("mobile-menu");
 
-        menuBtn.addEventListener("click", () => {
-            menu.classList.toggle("hidden");
-        });
+            menuBtn.addEventListener("click", function (e) {
+                e.stopPropagation(); // impede o clique de fechar imediatamente
+                menu.classList.toggle("hidden");
+            });
 
-        // Fecha o menu se clicar fora
-        window.addEventListener("click", function(e) {
-            if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
-                menu.classList.add("hidden");
-            }
+            window.addEventListener("click", function (e) {
+                if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
+                    menu.classList.add("hidden");
+                }
+            });
         });
     </script>
+
 
     </body>
 </html>
