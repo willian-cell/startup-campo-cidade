@@ -54,23 +54,6 @@
     </style>
 </head>
 
-<script>
-    const menuBtn = document.getElementById("mobile-menu-button");
-    const menu = document.getElementById("mobile-menu");
-
-    menuBtn.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
-    });
-
-    // Fecha o menu se clicar fora
-    window.addEventListener("click", function(e) {
-        if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
-            menu.classList.add("hidden");
-        }
-    });
-</script>
-
-
 <body class="font-sans  bg-emerald-300 scroll-smooth">
 <!--<body class="font-sans scroll-smooth bg-[url('/img/baner1.png')] bg-cover bg-no-repeat bg-center">
 -->
@@ -782,5 +765,22 @@
             testimonials[current].classList.add('opacity-100');
         }, 5000);
     </script>
-</body>
+
+    <script>
+        const menuBtn = document.getElementById("mobile-menu-button");
+        const menu = document.getElementById("mobile-menu");
+
+        menuBtn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+
+        // Fecha o menu se clicar fora
+        window.addEventListener("click", function(e) {
+            if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
+                menu.classList.add("hidden");
+            }
+        });
+    </script>
+
+    </body>
 </html>
